@@ -30,6 +30,7 @@ hr {
     margin: auto;
     width: var(--content-width);
     max-width: var(--content-max-width);
+    min-width: 460px;
     background-color: grey;
 }
 
@@ -53,6 +54,7 @@ a {
 nav {
     width: var(--content-width);
     max-width: var(--content-max-width);
+    min-width: 460px;
     margin: auto;
     padding: 3px 0;
     display: flex;
@@ -101,6 +103,7 @@ section.navLinks ul li a {
 section.news-partners {
     width: var(--content-width);
     max-width: var(--content-max-width);
+    min-width: 460px;
     margin: 5px auto;
     display: flex;
     justify-content: space-between;
@@ -125,6 +128,7 @@ section.news-partners .updateTime {
 section.newsContainer {
     width: var(--content-width);
     max-width: var(--content-max-width);
+    min-width: 460px;
     margin: 5px auto;
     display: flex;
     flex-wrap: wrap;
