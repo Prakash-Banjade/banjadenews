@@ -34,18 +34,47 @@
 
     <!-- News partners and update time -->
     <section class="news-partners">
-        <ul>
-            <li>The Times of India</li>
-            <li>News18</li>
-            <li>Zoom</li>
-            <li>Google News</li>
+        <ul id="partners">
+            <li><a href="https://timesofindia.indiatimes.com/">The Times of India</a></li>
+            <li><a href="https://www.ndtv.com/">NDTV News</a></li>
+            <li><a href="https://www.news18.com/">News18</a></li>
+            <li><a href="https://www.hindustantimes.com/">Hindustan Times</a></li>
+            <li><a href="https://news.google.com/">Google News</a></li>
+            <li>
+                <a href="https://www.cnn.com/india">CNN</a>
+            </li>
+            <li>
+                <a href="https://www.foxnews.com/category/world/world-regions/india">Fox News</a>
+            </li>
+
+
         </ul>
         <span id="updateTime" class="updateTime">sat, june 22, 2022 | 8:15 pm</span>
     </section>
     <hr>
+    <!-- NEWS CATEGORIES -->
+    <section class="categories">
+        <div class="selectCategory">
+
+            <label for="category">Select category: </label>
+            <select name="Categories" id="category">
+                <option value="business">Business</option>
+                <option value="entertainment">Entertainment</option>
+                <option value="sports">Sports</option>
+                <option value="science">Science</option>
+                <option value="technology">Technology</option>
+                <option value="general">General</option>
+            </select>
+        </div>
+        <div class="selectCountry">
+            <button class="country-cagegory active">India</button>
+            <button class="country-category">USA</button>
+        </div>
+    </section>
+    <hr>
     <!-- NEWS CONTAINER -->
     <section class="newsContainer" id="newsContainer">
-        <div class="left-news" id="ln">
+        <div class="left-news indian-news" id="ln">
 
             <div class="news1">
                 <span>Lorem ipsum dolor sit, amet consectetur </span>
@@ -58,7 +87,7 @@
                 <span class="readMore">Read More <a href="#">Here!</a></span>
             </div>
             <div class="news1">
-                <span>Lorem ipsum dolor sit, amet consectetur </span>
+                <span>Lorem ipsum dolor sit, amet Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa explicabo et minima saepe ab voluptatum possimus omnis optio quis deserunt! </span>
                 <img src="https://images.unsplash.com/photo-1601544359642-c76c4f7c3221?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGphZ3VhcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60.webp" alt="jaguar">
                 <span class="readMore">Read More <a href="#">Here!</a></span>
             </div>
@@ -68,8 +97,9 @@
 
         </div>
 
-        <div class="right-news" id="rn">
+        <div class="right-news indian-news" id="rn">
             <!-- Code injected by js -->
+            <h2>Top Headlines - Indian News</h2>
             <ul>
                 <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, esse!</li>
                 <li>Saepe dignissimos tenetur aspernatur corporis veritatis expedita deserunt molestias nihil.</li>
@@ -77,6 +107,47 @@
                 <li>Fuga veniam minus dolorum! Laborum praesentium voluptatem quam illo. Culpa?</li>
                 <li>Ipsam minima distinctio, placeat ex fuga nam officia? Modi, iusto.</li>
             </ul>
+        </div>
+
+    </section>
+    <hr>
+
+    <section class="newsContainer " id="mid-news">
+        <div class="left-news teslaNews other-news" id="tesla-today">
+            <h2>Tesla Today</h2>
+            <div class="news1">
+                <span>Lorem ipsum dolor sit, amet Lorem ipsum dolor sit amet consectetur adipisi </span>
+                <img src="https://images.unsplash.com/photo-1601544359642-c76c4f7c3221?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGphZ3VhcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60.webp" alt="jaguar">
+                <span class="readMore">Read More <a href="#">Here!</a></span>
+            </div>
+            <div class="news1">
+                <span>Lorem ipsum dolor sit, amet Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa explicabo et minima saepe ab voluptatum possimus omnis optio quis deserunt! </span>
+                <img src="https://images.unsplash.com/photo-1601544359642-c76c4f7c3221?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGphZ3VhcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60.webp" alt="jaguar">
+                <span class="readMore">Read More <a href="#">Here!</a></span>
+            </div>
+            <div class="news1">
+                <span>Lorem ipsum dolor sit, amet Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa explicabo et minima saepe ab voluptatum possimus omnis optio quis deserunt! </span>
+                <img src="https://images.unsplash.com/photo-1601544359642-c76c4f7c3221?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGphZ3VhcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60.webp" alt="jaguar">
+                <span class="readMore">Read More <a href="#">Here!</a></span>
+            </div>
+        </div>
+        <div class="left-news applenews other-news" id="apple-now">
+            <h2>Apple Now</h2>
+            <div class="news1">
+                <span>Lorem ipsum dolor sit, amet Lorem ipsum dolor sit amet consectetur </span>
+                <img src="https://images.unsplash.com/photo-1601544359642-c76c4f7c3221?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGphZ3VhcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60.webp" alt="jaguar">
+                <span class="readMore">Read More <a href="#">Here!</a></span>
+            </div>
+            <div class="news1">
+                <span>Lorem ipsum dolor sit, amet Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa explicabo et minima saepe ab voluptatum possimus omnis optio quis deserunt! </span>
+                <img src="https://images.unsplash.com/photo-1601544359642-c76c4f7c3221?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGphZ3VhcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60.webp" alt="jaguar">
+                <span class="readMore">Read More <a href="#">Here!</a></span>
+            </div>
+            <div class="news1">
+                <span>Lorem ipsum dolor sit, amet Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa explicabo et minima saepe ab voluptatum possimus omnis optio quis deserunt! </span>
+                <img src="https://images.unsplash.com/photo-1601544359642-c76c4f7c3221?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGphZ3VhcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60.webp" alt="jaguar">
+                <span class="readMore">Read More <a href="#">Here!</a></span>
+            </div>
         </div>
 
     </section>
