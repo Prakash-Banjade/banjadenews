@@ -1,19 +1,22 @@
 console.log("This is news site created by Prakash Banjade")
 
 let xhr = new XMLHttpRequest();
-let newsSrc = 'in'
-let apiKey = 'bff321d664ea4cb3a095bbd2716a33d0'
+let newsSrc = 'us'
+let apiKey = '642bf49f4bc44ac58d9e831de81c1a9c';
 let newsContainer = document.getElementById('newsContainer');
 let leftNews = document.getElementById("ln");
 let rightNews = document.getElementById('rn');
-let updateTime = document.getElementById('updateTime');
+let updateTime = document.querySelectorAll('.updateTime');
 
 xhr.open('GET', `https://newsapi.org/v2/top-headlines?country=${newsSrc}&apiKey=${apiKey}`, true);
 
 xhr.onload = function() {
     if (this.status == 200) {
         let json = JSON.parse(this.responseText);
-        updateTime.innerText = json.articles[0].publishedAt;
+        // updateTime.innerText = json.articles[0].publishedAt;
+        Array.from(updateTime).forEach((e) => {
+            e.innerText = json.articles[0].publishedAt;
+        })
 
         let leftNewsHtml = '';
         let rightNewsHtml = '';
