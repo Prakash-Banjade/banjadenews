@@ -84,6 +84,13 @@ nav {
     background-color: var(--nav-bg-color);
     border-bottom: 1px solid rgb(155 150 150);
     color: var(--primary-color);
+    z-index: 2;
+}
+
+nav.sticky {
+    position: sticky;
+    overflow-anchor: none;
+    top: 0;
 }
 
 section.logo div {
@@ -418,7 +425,10 @@ section.newsContainer .left-news.other-news div:nth-child(2) img {
         max-width: 100%;
     }
     section.newsContainer .left-news.indian-news div:first-child {
-        height: 280px;
+        height: 250px;
+    }
+    section.newsContainer .left-news.other-news div:nth-child(2) {
+        height: 250px;
     }
 }
 

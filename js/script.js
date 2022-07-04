@@ -5,7 +5,13 @@ let leftNews = document.getElementById("ln");
 let rightNews = document.getElementById('rn');
 let categoryNews = document.getElementById('category-news');
 let updateTime = document.querySelectorAll('.updateTime');
-let apiKey = '642bf49f4bc44ac58d9e831de81c1a9c';
+// let apiKey = '642bf49f4bc44ac58d9e831de81c1a9c';
+let apiKey = 'bff321d664ea4cb3a095bbd2716a33d0';
+// Creating past date
+let date = new Date();
+let pastDate = `${date.getFullYear()}-${date.getMonth()}-${date.getDate()}`
+console.log(pastDate);
+
 
 
 // ========== Getting Indian News ============
@@ -45,6 +51,7 @@ function startingNews() {
             newsContainer.innerHTML = `<div style="font-size: 3rem; margin-top: 2rem;">The server is down for some reason!<br><span style="font-size:1.5rem;">Please try again in a while.</span></div>`;
         }
     }
+
     xhrInd.send();
     Array.from(leftNews.children).forEach((e) => {
         e.children[0].innerText = `${ e.children[0].innerText.slice(0,50)}...`;
@@ -57,6 +64,10 @@ startingNews();
 let category = document.getElementById('category');
 category.addEventListener('change', (e) => {
     let apiCat = e.target.value;
+    if (apiCat == 'all') {
+        allNews();
+        return;
+    }
     categoryNews.style.display = 'flex';
     let categoryNewsHtml = '';
     rightNews.style.display = "none";
@@ -68,7 +79,6 @@ category.addEventListener('change', (e) => {
 
     xhr.onload = function() {
         if (this.status == 200) {
-            console.log(JSON.parse(this.responseText))
             let json = JSON.parse(this.responseText);
             json.sources.forEach((element) => {
                 categoryNewsHtml += `  <a href="${element.url}">
@@ -89,11 +99,13 @@ category.addEventListener('change', (e) => {
 
 // Clicking on home Button
 let homeBtn = document.getElementById('home');
-homeBtn.addEventListener('click', () => {
+homeBtn.addEventListener('click', allNews);
+
+function allNews() {
     categoryNews.style.display = 'none';
     leftNews.style.display = 'flex';
     rightNews.style.display = 'block';
-})
+}
 
 // Changing country
 let countryBtn = document.getElementsByClassName('country-category');
@@ -113,10 +125,10 @@ Array.from(countryBtn).forEach((element) => {
     })
 })
 
-// ========== Getting Tesla News News ============
+// ========== Getting Tesla News ============
 let teslaNews = document.getElementById('tesla-today');
 let xhrTes = new XMLHttpRequest();
-xhrTes.open('GET', `https://newsapi.org/v2/everything?q=tesla&from=2022-06-03&sortBy=publishedAt&apiKey=${apiKey}`, true);
+xhrTes.open('GET', `https://newsapi.org/v2/everything?q=tesla&from=${pastDate}&sortBy=publishedAt&apiKey=${apiKey}`, true);
 xhrTes.onload = function() {
     if (this.status == 200) {
         let json = JSON.parse(this.responseText);
@@ -139,10 +151,10 @@ xhrTes.onload = function() {
 xhrTes.send();
 
 // ============== Apple News ================
-apiKey = '642bf49f4bc44ac58d9e831de81c1a9c';
 let appleNews = document.getElementById('apple-now');
 let xhrApple = new XMLHttpRequest();
-xhrApple.open('GET', `https://newsapi.org/v2/everything?q=apple&from=2022-07-02&to=2022-07-02&sortBy=popularity&apiKey=${apiKey}`, true);
+// xhrApple.open('GET', `https://newsapi.org/v2/everything?q=apple&from=2022-7-2&to=2022-07-02&sortBy=popularity&apiKey=${apiKey}`, true);
+xhrApple.open('GET', `https://newsapi.org/v2/everything?q=apple&from=${pastDate}&sortBy=popularity&apiKey=${apiKey}`, true);
 xhrApple.onload = function() {
     if (this.status == 200) {
         let json = JSON.parse(this.responseText);
